@@ -1,0 +1,64 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.toggle {
+  box-sizing: border-box;
+  width: 320px;
+  height: 50px;
+  padding: 3px;
+  margin: 0 auto;
+  background-color: colors.$LIGHTGRAY;
+  border-radius: 100px;
+
+  .wrapper {
+    position: relative;
+    width: 314px;
+    height: 44px;
+
+    .toggleMove {
+      width: 157px;
+      height: 44px;
+      background-color: colors.$WHITE;
+      border: none;
+      border-radius: 100px;
+      transition: all 0.2s ease-in;
+    }
+
+    .left {
+      transform: translateX(0);
+    }
+
+    .right {
+      transform: translateX(157px);
+    }
+
+    .buttons {
+      position: absolute;
+      top: 0;
+      width: 320px;
+      height: 50px;
+      margin: 0 auto;
+      cursor: pointer;
+      border-radius: 100px;
+
+      .button {
+        width: 157px;
+        height: 44px;
+        font-size: 20px;
+        font-weight: bold;
+        color: colors.$GRAY6;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        border-radius: 100px;
+        outline: none;
+      }
+
+      .clicked {
+        color: colors.$BLACK;
+      }
+    }
+  }
+}

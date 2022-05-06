@@ -1,0 +1,114 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.slider {
+  width: 400px;
+  margin: 0 auto;
+
+  .sliderCount {
+    width: 300px;
+    height: 50px;
+    margin: 0 auto;
+    text-align: right;
+    background-color: whitesmoke;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+
+    .sliderCountNumber {
+      width: 250px;
+      padding: 15px 0;
+      margin: 0 auto;
+    }
+  }
+
+  .sliderOptions {
+    display: flex;
+    flex-direction: column;
+    width: 315px;
+    padding: 0 0 10px;
+    margin: 0 auto;
+    text-align: center;
+
+    .back {
+      position: relative;
+      width: 315px;
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .sliderBackground {
+      position: relative;
+      bottom: -15px;
+      display: flex;
+      justify-content: space-between;
+      width: 315px;
+
+      .sliderBackgroundDot {
+        width: 20px;
+        height: 20px;
+        background-color: #d3d3d3;
+        border-radius: 10px;
+      }
+
+      .before {
+        background-color: #04aa6d;
+      }
+    }
+
+    .sliderOptionsRange {
+      position: relative;
+      bottom: 10px;
+      height: 10px;
+      margin: 0;
+      background: none;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      opacity: 1;
+      transition: 0.2s;
+      transition: opacity 0.2s;
+    }
+
+    .sliderOptionsRange::-webkit-slider-thumb {
+      width: 25px;
+      height: 25px;
+      cursor: pointer;
+      cursor: grab;
+      background: #04aa6d;
+      border: 3px solid white;
+      border-radius: 25px;
+      box-shadow: 0 0 5px 1px lightgray;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+  }
+
+  .ticks {
+    display: flex;
+    justify-content: space-between;
+    width: 370px;
+    margin: 0 auto;
+
+    .numberWrapper {
+      flex: 1;
+      font-size: 14px;
+      text-align: center;
+
+      .sliderNumber {
+        width: 50px;
+        margin: 0 auto;
+        color: colors.$GRAYA;
+        background-color: whitesmoke;
+        border-radius: 10px;
+      }
+
+      .sliderNumber:hover {
+        color: colors.$WHITE;
+        cursor: pointer;
+        background-color: #04aa6d;
+      }
+    }
+  }
+}
