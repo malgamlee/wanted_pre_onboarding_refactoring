@@ -3,7 +3,7 @@ import styles from './Toggle.module.scss';
 import cn from 'classnames';
 
 export default function Toggle() {
-  const [isToggleChecked, setIsToggleChecked] = useState(true);
+  const [isToggleChecked, setIsToggleChecked] = useState(false);
 
   const clickToggle = () => {
     setIsToggleChecked((prev) => !prev);
