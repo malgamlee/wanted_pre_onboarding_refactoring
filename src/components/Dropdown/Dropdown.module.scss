@@ -42,59 +42,50 @@
     transition: all 0.2s linear;
     transform: translateY(-1%);
 
-    .listBox {
-      display: none;
+    .listInputWrapper {
+      display: flex;
+      height: 50px;
+      padding-left: 15px;
 
-      .listInputWrapper {
-        display: flex;
+      .listSearchIcon {
+        width: 20px;
         height: 50px;
-        padding-left: 15px;
-
-        .listSearchIcon {
-          width: 20px;
-          height: 50px;
-          line-height: 60px;
-        }
-
-        .listInput {
-          width: 255px;
-          height: 50px;
-          margin: 0 10px;
-          font-size: 20px;
-          line-height: 25px;
-          text-align: left;
-          border: none;
-          outline: none;
-        }
+        line-height: 60px;
       }
 
-      .listWrapper {
-        border-top: 1px solid colors.$GRAYD;
-
-        .listValue {
-          width: 319px;
-          height: 50px;
-          padding-left: 45px;
-          font-size: 20px;
-          text-align: left;
-          cursor: pointer;
-          transition: 0.2s;
-        }
-
-        .listValue:hover {
-          background-color: rgb(colors.$GRAYD, 50%);
-        }
+      .listInput {
+        width: 255px;
+        height: 50px;
+        margin: 0 10px;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: left;
+        border: none;
+        outline: none;
       }
     }
 
-    .open {
-      display: block;
+    .listWrapper {
+      border-top: 1px solid colors.$GRAYD;
+
+      .listValue {
+        width: 319px;
+        height: 50px;
+        padding-left: 45px;
+        font-size: 20px;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .listValue:hover {
+        background-color: rgb(colors.$GRAYD, 50%);
+      }
     }
   }
 
   .open {
     pointer-events: all;
-    border: 1px solid colors.$GRAYD;
     opacity: 1;
     transform: translateY(0);
   }

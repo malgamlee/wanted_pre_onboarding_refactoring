@@ -68,30 +68,28 @@ export default function Dropdown() {
         </div>
       </button>
       <div className={cx(styles.dropdownList, { [styles.open]: clickDropdown })}>
-        <div className={cx(styles.listBox, { [styles.open]: clickDropdown })}>
-          <div className={cx(styles.listInputWrapper)}>
-            <div className={cx(styles.listSearchIcon)}>
-              <SearchIcon />
-            </div>
-            <input
-              className={cx(styles.listInput)}
-              type="text"
-              onInput={onInput}
-              placeholder="Search Day"
-              value={inputValue}
-              onChange={onChangeInput}
-            />
+        <div className={cx(styles.listInputWrapper)}>
+          <div className={cx(styles.listSearchIcon)}>
+            <SearchIcon />
           </div>
-          <div className={cx(styles.listWrapper)}>
-            <button type="button" className={cx(styles.listValue)} onClick={selectValue}>
-              All Days
+          <input
+            className={cx(styles.listInput)}
+            type="text"
+            onInput={onInput}
+            placeholder="Search Day"
+            value={inputValue}
+            onChange={onChangeInput}
+          />
+        </div>
+        <div className={cx(styles.listWrapper)}>
+          <button type="button" className={cx(styles.listValue)} onClick={selectValue}>
+            All Days
+          </button>
+          {list.map((value, i) => (
+            <button type="button" className={cx(styles.listValue)} onClick={selectValue} key={value}>
+              {value}
             </button>
-            {list.map((value, i) => (
-              <button type="button" className={cx(styles.listValue)} onClick={selectValue} key={value}>
-                {value}
-              </button>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     </div>

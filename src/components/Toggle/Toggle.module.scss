@@ -45,12 +45,13 @@
         height: 44px;
         font-size: 20px;
         font-weight: bold;
-        color: colors.$GRAY6;
+        color: colors.$GRAYA;
         cursor: pointer;
         background-color: transparent;
         border: none;
         border-radius: 100px;
         outline: none;
+        transition: 0.2s;
       }
 
       .clicked {
