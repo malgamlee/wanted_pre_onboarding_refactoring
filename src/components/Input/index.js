@@ -15,7 +15,7 @@ export default function Input() {
   };
 
   const passwordCheck = () => {
-    setIsPasswordEncrypt(!isPasswordEncrypt);
+    setIsPasswordEncrypt((prev) => !prev);
   };
 
   const handleUserEmail = (e) => {
