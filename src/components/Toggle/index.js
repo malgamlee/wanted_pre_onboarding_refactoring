@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './Toggle.module.scss';
-import cn from 'classnames';
+import { cx } from '../../styles';
 
 export default function Toggle() {
   const [isToggleChecked, setIsToggleChecked] = useState(false);
@@ -10,19 +10,19 @@ export default function Toggle() {
   };
 
   return (
-    <div className={cn(styles.toggle)}>
-      <div className={cn(styles.wrapper)}>
-        <div className={cn(styles.toggleMove, { [styles.move]: isToggleChecked })} />
-        <div className={cn(styles.buttons)}>
+    <div className={cx(styles.toggle)}>
+      <div className={cx(styles.wrapper)}>
+        <div className={cx(styles.toggleMove, { [styles.move]: isToggleChecked })} />
+        <div className={cx(styles.buttons)}>
           <button
-            className={cn(styles.button, { [styles.clicked]: !isToggleChecked })}
+            className={cx(styles.button, { [styles.clicked]: !isToggleChecked })}
             type="button"
             onClick={clickToggle}
           >
             기본
           </button>
           <button
-            className={cn(styles.button, { [styles.clicked]: isToggleChecked })}
+            className={cx(styles.button, { [styles.clicked]: isToggleChecked })}
             type="button"
             onClick={clickToggle}
           >
