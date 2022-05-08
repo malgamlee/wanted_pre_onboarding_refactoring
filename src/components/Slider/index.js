@@ -2,6 +2,8 @@ import styles from './Slider.module.scss';
 import { cx } from '../../styles';
 import { useState } from 'react';
 
+const SIZE_NUMBER = [1, 25, 50, 75, 100];
+
 export default function Slider() {
   const [changeNum, setChangeNum] = useState(1);
   const value = (e) => {
@@ -21,7 +23,7 @@ export default function Slider() {
       </div>
       <div className={cx(styles.sliderOptions)}>
         <div className={cx(styles.sliderBackground)}>
-          {[1, 25, 50, 75, 100].map((value) => (
+          {SIZE_NUMBER.map((value) => (
             <div className={cx(styles.sliderBackgroundDot, { [styles.before]: changeNum >= value })} key={value} />
           ))}
         </div>
@@ -34,8 +36,8 @@ export default function Slider() {
         <input
           className={cx(styles.sliderOptionsRange)}
           type="range"
-          min="1"
-          max="100"
+          min={SIZE_NUMBER[0]}
+          max={SIZE_NUMBER[SIZE_NUMBER.length - 1]}
           step="1"
           onChange={value}
           value={changeNum}
@@ -43,7 +45,7 @@ export default function Slider() {
         />
       </div>
       <div className={cx(styles.ticks)}>
-        {[1, 25, 50, 75, 100].map((value) => (
+        {SIZE_NUMBER.map((value) => (
           <span className={cx(styles.numberWrapper)} key={value}>
             <button
               type="button"

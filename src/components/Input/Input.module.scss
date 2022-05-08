@@ -1,0 +1,66 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/levels';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+.input {
+  width: 315px;
+  margin: 0 auto;
+
+  .inputWrapper {
+    width: 315px;
+
+    .inputTitle {
+      padding: 0 0 5px 10px;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .inputBox {
+      position: relative;
+      height: 50px;
+      background-color: transparent;
+
+      .inputValue {
+        box-sizing: border-box;
+        width: 315px;
+        height: 50px;
+        padding: 15px 45px 15px 15px;
+        font-size: 20px;
+        text-align: left;
+        border: none;
+        border: 1px solid lightgrey;
+        border-radius: 8px;
+        outline: none;
+        transition: all 0.2s linear;
+      }
+
+      .inputIcon {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        width: 24px;
+        height: 50px;
+        line-height: 60px;
+      }
+
+      .pwIcon {
+        cursor: pointer;
+      }
+
+      .inputBoxInputValue:focus {
+        border: 1px solid black;
+        opacity: 1;
+      }
+
+      input[type='password']::-ms-reveal,
+      input[type='password']::-ms-clear {
+        display: none;
+      }
+    }
+  }
+
+  .password {
+    margin-top: 15px;
+  }
+}

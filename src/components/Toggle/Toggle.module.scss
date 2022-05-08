@@ -24,13 +24,10 @@
       border: none;
       border-radius: 100px;
       transition: all 0.2s ease-in;
-    }
-
-    .left {
       transform: translateX(0);
     }
 
-    .right {
+    .move {
       transform: translateX(157px);
     }
 

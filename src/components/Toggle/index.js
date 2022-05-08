@@ -12,17 +12,17 @@ export default function Toggle() {
   return (
     <div className={cn(styles.toggle)}>
       <div className={cn(styles.wrapper)}>
-        <div className={cn(styles.toggleMove, { [styles.left]: isToggleChecked, [styles.right]: !isToggleChecked })} />
+        <div className={cn(styles.toggleMove, { [styles.move]: isToggleChecked })} />
         <div className={cn(styles.buttons)}>
           <button
-            className={cn(styles.button, { [styles.clicked]: isToggleChecked })}
+            className={cn(styles.button, { [styles.clicked]: !isToggleChecked })}
             type="button"
             onClick={clickToggle}
           >
             기본
           </button>
           <button
-            className={cn(styles.button, { [styles.clicked]: !isToggleChecked })}
+            className={cn(styles.button, { [styles.clicked]: isToggleChecked })}
             type="button"
             onClick={clickToggle}
           >
