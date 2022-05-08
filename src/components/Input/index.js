@@ -10,7 +10,6 @@ export default function Input() {
   const [userPw, setUserPw] = useState('');
 
   const emailCheck = (e) => {
-    // /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.
     const emailRegExp = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(?:\.[a-zA-Z0-9-]+)+$/;
     setIsEmailCheck(emailRegExp.test(e.currentTarget.value));
   };

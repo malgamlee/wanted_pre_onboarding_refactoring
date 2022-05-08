@@ -25,18 +25,27 @@ function useOutsideAlerter(ref, setClickDropdown) {
 export default function Dropdown() {
   const [changeValue, setChageValue] = useState('All Days');
   const [clickDropdown, setClickDropdown] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
   const [list, setList] = useState(WEEK_VALUE);
+
+  const box = useRef(null);
+  useOutsideAlerter(box, setClickDropdown);
 
   const openClose = () => {
     setClickDropdown((prev) => !prev);
+    setInputValue('');
+    setList(WEEK_VALUE);
   };
 
   const selectValue = (e) => {
     setChageValue(e.target.textContent);
     setClickDropdown((prev) => !prev);
+    setInputValue('');
+    setList(WEEK_VALUE);
   };
 
-  const onChangeInput = (e) => {
+  const onInput = (e) => {
     const tmpArr = [];
     for (const i in WEEK_VALUE) {
       if (WEEK_VALUE[i].toUpperCase().includes(e.target.value.toUpperCase())) {
@@ -46,8 +55,9 @@ export default function Dropdown() {
     setList(tmpArr);
   };
 
-  const box = useRef(null);
-  useOutsideAlerter(box, setClickDropdown);
+  const onChangeInput = (e) => {
+    setInputValue(e.currentTarget.value);
+  };
 
   return (
     <div className={cx(styles.dropdown)} ref={box} data-box={clickDropdown}>
@@ -63,7 +73,14 @@ export default function Dropdown() {
             <div className={cx(styles.listSearchIcon)}>
               <SearchIcon />
             </div>
-            <input className={cx(styles.listInput)} type="text" onInput={onChangeInput} placeholder="Search Day" />
+            <input
+              className={cx(styles.listInput)}
+              type="text"
+              onInput={onInput}
+              placeholder="Search Day"
+              value={inputValue}
+              onChange={onChangeInput}
+            />
           </div>
           <div className={cx(styles.listWrapper)}>
             <button type="button" className={cx(styles.listValue)} onClick={selectValue}>
