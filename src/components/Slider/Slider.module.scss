@@ -53,7 +53,7 @@
       }
 
       .before {
-        background-color: #04aa6d;
+        background-color: colors.$MAIN_GREEN;
       }
     }
 
@@ -106,7 +106,7 @@
       .sliderNumber:hover {
         color: colors.$WHITE;
         cursor: pointer;
-        background-color: #04aa6d;
+        background-color: colors.$MAIN_GREEN;
       }
     }
   }
